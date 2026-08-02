@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FREE MM2 STUFF</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    overflow:hidden;
+    background:#05070d;
+    color:white;
+    font-family:Arial,sans-serif;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+/* Animated stars */
+#stars{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+}
+
+.star{
+    position:absolute;
+    width:2px;
+    height:2px;
+    background:white;
+    border-radius:50%;
+    animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+    from{
+        opacity:.2;
+        transform:scale(1);
+        box-shadow:0 0 2px white;
+    }
+    to{
+        opacity:1;
+        transform:scale(1.8);
+        box-shadow:0 0 12px white;
+    }
+}
+
+.card{
+    position:relative;
+    z-index:2;
+    background:rgba(15,15,20,.75);
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:16px;
+    padding:40px;
+    text-align:center;
+    backdrop-filter:blur(12px);
+    animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+    50%{transform:translateY(-10px);}
+}
+
+button{
+    margin-top:20px;
+    padding:14px 28px;
+    border:none;
+    border-radius:10px;
+    background:#3b82f6;
+    color:white;
+    cursor:pointer;
+    font-size:18px;
+    transition:.25s;
+}
+
+button:hover{
+    transform:scale(1.08);
+    box-shadow:0 0 25px #3b82f6;
+}
+
+.notice{
+    position:fixed;
+    top:20px;
+    right:20px;
+    background:#181818;
+    padding:15px 20px;
+    border-left:4px solid #3b82f6;
+    border-radius:10px;
+    animation:slide 0.6s ease;
+}
+
+@keyframes slide{
+    from{
+        transform:translateX(350px);
+        opacity:0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div id="stars"></div>
+
+<div class="notice">
+    Welcome! Enjoy the animated demo.
+</div>
+
+<div class="card">
+    <h1>Welcome</h1>
+    <p>This is an animated space-themed landing page.</p>
+
+    <button onclick="alert('Replace this with your own website link!')">
+        Open Website
+    </button>
+</div>
+
+<script>
+const stars=document.getElementById("stars");
+
+for(let i=0;i<250;i++){
+    const s=document.createElement("div");
+    s.className="star";
+    s.style.left=Math.random()*100+"vw";
+    s.style.top=Math.random()*100+"vh";
+    s.style.animationDuration=(1+Math.random()*3)+"s";
+    s.style.opacity=Math.random();
+    stars.appendChild(s);
+}
+
+setInterval(()=>{
+    document.querySelectorAll(".star").forEach(star=>{
+        star.style.top=((parseFloat(star.style.top)-0.05+100)%100)+"vh";
+    });
+},30);
+</script>
+
+</body>
+  </html>
